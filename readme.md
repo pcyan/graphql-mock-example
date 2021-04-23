@@ -14,6 +14,8 @@ npm install
 npm run test
 ```
 
+> SDL 文件修改后，需要重新运行 `npm run test`
+
 ### mock 多个schema
 
 ```javascript

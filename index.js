@@ -9,12 +9,14 @@ const casual = require('casual');
 
 const app = express()
 
+// 读取指定路径下SDL文件
 const schema = loadSchemaSync('./schema/**/*.graphql', { // load from multiple files using glob
     loaders: [
         new GraphQLFileLoader()
     ]
 });
 
+// 针对指定数据类型，mock返回特定的返回值
 const mocks = {
     Int: () => casual.integer(from = 0, to = 10000),
     Float: () => casual.double(from = 0, to = 10000),
