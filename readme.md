@@ -30,7 +30,7 @@ const schema = loadSchemaSync('./schema/**/*.graphql', { // load from multiple f
 ### mock指定返回值
 
 ```javascript
-// 针对指定数据类型，mock返回特定的返回值
+// 针对指定数据类型，mock返回特定的返回值，支持scalar
 const mocks = {
     Int: () => casual.integer(from = 0, to = 10000),
     Float: () => casual.double(from = 0, to = 10000),
