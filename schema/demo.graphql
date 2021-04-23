@@ -1,0 +1,46 @@
+
+type Query {
+    phones(nameLike: String, price: Int): [Phone]
+    company(name: String): Company
+}
+
+type Mutation {
+    addPhone(inputPhone: InputPhone): Phone
+    addCompany(inputCompany: InputCompany): Company
+}
+
+type Phone {
+    name: String
+    price: Int
+    releaseDate: Date
+    companyName: String
+    company: Company
+}
+
+type Company {
+    name: String
+    country: COUNTRY
+    address: String
+    phones: [Phone]
+}
+
+input InputPhone {
+    name: String
+    price: Int
+    releaseDate: Date
+    companyName: String
+}
+
+input InputCompany {
+    name: String
+    country: COUNTRY
+    address: String
+}
+
+enum COUNTRY {
+    CHINA
+    AMERICA
+    JAPAN
+}
+
+scalar Date
