@@ -4,6 +4,10 @@ type Query {
     company(name: String): Company
 }
 
+extend type Query{
+    getTitle: String
+}
+
 type Mutation {
     addPhone(inputPhone: InputPhone): Phone
     addCompany(inputCompany: InputCompany): Company
